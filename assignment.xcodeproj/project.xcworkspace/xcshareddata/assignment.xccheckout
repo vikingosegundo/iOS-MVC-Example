@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6AAB767B-5D82-4D22-9D79-4CC69648A861</string>
+	<key>IDESourceControlProjectName</key>
+	<string>assignment</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9692F958-F635-4A6F-A965-CD05AAA85016</key>
+		<string>https://github.com/MatVre/iOS_MVC_Example.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>assignment.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9692F958-F635-4A6F-A965-CD05AAA85016</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MatVre/iOS_MVC_Example.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9692F958-F635-4A6F-A965-CD05AAA85016</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9692F958-F635-4A6F-A965-CD05AAA85016</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS_MVC_Example</string>
+		</dict>
+	</array>
+</dict>
+</plist>
