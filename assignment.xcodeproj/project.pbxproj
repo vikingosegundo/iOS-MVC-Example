@@ -21,7 +21,7 @@
 		E05B44F61865A08300E4A43A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E05B44D81865A08300E4A43A /* UIKit.framework */; };
 		E05B44FE1865A08300E4A43A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E05B44FC1865A08300E4A43A /* InfoPlist.strings */; };
 		E05B45001865A08300E4A43A /* assignmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E05B44FF1865A08300E4A43A /* assignmentTests.m */; };
-		E05B450B1865A0D800E4A43A /* dataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E05B450A1865A0D800E4A43A /* dataRequest.m */; };
+		E05B450B1865A0D800E4A43A /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E05B450A1865A0D800E4A43A /* DataRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 		E05B44FB1865A08300E4A43A /* assignmentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "assignmentTests-Info.plist"; sourceTree = "<group>"; };
 		E05B44FD1865A08300E4A43A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E05B44FF1865A08300E4A43A /* assignmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = assignmentTests.m; sourceTree = "<group>"; };
-		E05B45091865A0D800E4A43A /* dataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataRequest.h; sourceTree = "<group>"; };
-		E05B450A1865A0D800E4A43A /* dataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dataRequest.m; sourceTree = "<group>"; };
+		E05B45091865A0D800E4A43A /* DataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRequest.h; sourceTree = "<group>"; };
+		E05B450A1865A0D800E4A43A /* DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +117,8 @@
 			children = (
 				E05B44E31865A08300E4A43A /* AppDelegate.h */,
 				E05B44E41865A08300E4A43A /* AppDelegate.m */,
-				E05B45091865A0D800E4A43A /* dataRequest.h */,
-				E05B450A1865A0D800E4A43A /* dataRequest.m */,
+				E05B45091865A0D800E4A43A /* DataRequest.h */,
+				E05B450A1865A0D800E4A43A /* DataRequest.m */,
 				E05B44E61865A08300E4A43A /* Main.storyboard */,
 				E05B44E91865A08300E4A43A /* ViewController.h */,
 				E05B44EA1865A08300E4A43A /* ViewController.m */,
@@ -202,7 +202,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "MatVre";
+				ORGANIZATIONNAME = MatVre;
 				TargetAttributes = {
 					E05B44F11865A08300E4A43A = {
 						TestTargetID = E05B44D01865A08300E4A43A;
@@ -257,7 +257,7 @@
 				E05B44EB1865A08300E4A43A /* ViewController.m in Sources */,
 				E05B44E51865A08300E4A43A /* AppDelegate.m in Sources */,
 				E05B44E11865A08300E4A43A /* main.m in Sources */,
-				E05B450B1865A0D800E4A43A /* dataRequest.m in Sources */,
+				E05B450B1865A0D800E4A43A /* DataRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +466,7 @@
 				E05B45051865A08300E4A43A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E05B45061865A08300E4A43A /* Build configuration list for PBXNativeTarget "assignmentTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +475,7 @@
 				E05B45081865A08300E4A43A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
