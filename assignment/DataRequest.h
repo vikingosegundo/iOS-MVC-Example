@@ -7,22 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+typedef void(^DataResponseBlock)(id resposeObject);
+typedef void(^FailurBlock)(NSError *error);
 
 @interface DataRequest : NSObject
+@property (nonatomic, strong) NSArray *operations;
+@property (nonatomic, copy) FailurBlock failureBlock;
+- (void)fetchFrom:(NSURL *)url;
 
-- (void)fetchFrom:(NSURL *)url
-        onSuccess:(void(^)(id response))successBlock
-        onFailure:(void(^)(NSError * error)) failureBlock;
-
-- (void)everyTenthLetterFromURL:(NSURL *) url
-                      onSuccess:(void(^)(NSArray *letters))success
-                      onFailure:(void (^)(NSError *error))failureBlock;
-
-- (void)tenthLetterFromURL:(NSURL *) url
-                 onSuccess:(void(^)(NSString *letter))success
-                 onFailure:(void (^)(NSError *error))failureBlock;
-
--(void) allWordsFromURL:(NSURL *)url
-              onSuccess:(void (^)(NSArray *words))success
-              onFailure:(void (^)(NSError *error))failureBlock;
 @end

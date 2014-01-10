@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DataRequest.h"
 
 @interface ViewController : UIViewController
 {
