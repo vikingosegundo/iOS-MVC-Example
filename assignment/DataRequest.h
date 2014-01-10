@@ -7,12 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef void(^DataResponseBlock)(id resposeObject);
+
+@protocol DataRequestDelegate <NSObject>
+
+-(void)result:(id)result forBlockWithIdenfier:(NSString *)identifier;
+
+@end
+
+
+typedef id(^DataResponseBlock)(id resposeObject, NSString **blockIdentifier);
 typedef void(^FailurBlock)(NSError *error);
 
 @interface DataRequest : NSObject
 @property (nonatomic, strong) NSArray *operations;
 @property (nonatomic, copy) FailurBlock failureBlock;
+@property (nonatomic, weak) id<DataRequestDelegate> delegate;
 - (void)fetchFrom:(NSURL *)url;
 
 @end

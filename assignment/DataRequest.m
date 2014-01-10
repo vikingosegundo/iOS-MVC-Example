@@ -30,8 +30,11 @@
         } else {
             for (DataResponseBlock obj in _operations) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    
-                    obj(responseString);
+                    NSString *iden;
+                    id result = obj(responseString, &iden);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.delegate result:result forBlockWithIdenfier:iden];
+                    });
                 });
             }
         }

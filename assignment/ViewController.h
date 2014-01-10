@@ -8,13 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol DataSourceProtocol <NSObject>
+
+-(NSArray *)operations;
+-(NSURL *)url;
+@end
+
+
 @interface ViewController : UIViewController
 {
     IBOutlet UITextView *textView1;
     IBOutlet UITextView *textView2;
     IBOutlet UITextView *textView3;
 }
-
+@property (nonatomic, weak) IBOutlet id<DataSourceProtocol> dataSource;
 - (IBAction)runButton:(id)sender;
 
 
