@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol DataSourceProtocol <NSObject>
+@protocol ViewControllerDataSourceProtocol <NSObject>
 
 -(NSArray *)operations;
 -(NSURL *)url;
@@ -22,7 +22,8 @@
     IBOutlet UITextView *textView2;
     IBOutlet UITextView *textView3;
 }
-@property (nonatomic, weak) IBOutlet id<DataSourceProtocol> dataSource;
+@property (nonatomic, strong) NSArray *blockIdentifier;
+@property (nonatomic, strong) IBOutlet id<ViewControllerDataSourceProtocol> dataSource;
 - (IBAction)runButton:(id)sender;
 
 

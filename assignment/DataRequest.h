@@ -21,7 +21,7 @@ typedef void(^FailurBlock)(NSError *error);
 @interface DataRequest : NSObject
 @property (nonatomic, strong) NSArray *operations;
 @property (nonatomic, copy) FailurBlock failureBlock;
-@property (nonatomic, weak) id<DataRequestDelegate> delegate;
-- (void)fetchFrom:(NSURL *)url;
+@property (nonatomic, weak) IBOutlet id<DataRequestDelegate> delegate;
+- (void)fetchFromURL:(NSURL *)url;
 
 @end

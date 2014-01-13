@@ -13,7 +13,7 @@
 
 -(NSURL *)url
 {
-    return [NSURL URLWithString:@"https://www.google.com/"];
+    return [NSURL URLWithString:self.address];
 }
 
 -(NSArray *)operations
@@ -24,6 +24,8 @@
     
     
     DataResponseBlock everyTenthLetter = ^id(id response, NSString **blockIdentifier){
+        *blockIdentifier = @"everyTenthLetter";
+
         if ([response isKindOfClass:[NSString class]]) {
             NSString *responseString = (NSString *)response;
             responseString = [blockSelf _flattendedString:responseString keepWords:NO];
@@ -39,7 +41,6 @@
                                                     [letterArray addObject:substring];
                                                 }
                                             }];
-            *blockIdentifier = @"everyTenthLetter";
             return letterArray;
         }
         return nil;
@@ -65,18 +66,14 @@
         NSString *responseString = (NSString *)response;
         NSArray *words = [blockSelf _wordsFromString:responseString];
         __block NSUInteger count =0;
-        NSString *wordToCount = @"google";
+        NSString *wordToCount = [blockSelf name];
 
         [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
-            if ([word compare:wordToCount options:NSCaseInsensitiveSearch]) {
+            if ([word compare:wordToCount options:NSCaseInsensitiveSearch] == NSOrderedSame) {
                 ++count;
             }
         }];
-        
-            return [NSString stringWithFormat:@"\"%@\" was found %d times in %d words", wordToCount, count, [words count]];
-        
-        
-        
+        return [NSString stringWithFormat:@"\"%@\" was found %d times in %d words", wordToCount, count, [words count]];
     };
     
     [operations addObject:[everyTenthLetter copy]];
@@ -90,8 +87,7 @@
 
 -(NSString *) _flattendedString:(NSString *)string keepWords:(BOOL)keepWords
 {
-    return (keepWords) ? [[self _wordsFromString:string] componentsJoinedByString:@" "]
-    : [[self _wordsFromString:string] componentsJoinedByString:@""] ;
+    return [[self _wordsFromString:string] componentsJoinedByString:(keepWords) ? @" ": @""] ;
 }
 
 

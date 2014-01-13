@@ -10,6 +10,7 @@
 #import "DataRequest.h"
 
 @interface ViewController ()<DataRequestDelegate>
+@property (strong, nonatomic) IBOutlet DataRequest *dataRequest;
 
 @end
 
@@ -17,32 +18,36 @@
 
 
 
-- (IBAction)runButton:(id)sender {
-    
-    DataRequest *request = [[DataRequest alloc] init];
-    request.delegate = self;
-
-    request.operations = [self.dataSource operations];
+- (IBAction)runButton:(id)sender
+{
+    self.dataRequest.operations = [self.dataSource operations];
     FailurBlock failure = ^(NSError *error){
-        [[[UIAlertView alloc] initWithTitle:@"error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"dissmiss" otherButtonTitles: nil] show];
-        
+        [[[UIAlertView alloc] initWithTitle:@"error"
+                                    message:[error localizedDescription]
+                                   delegate:nil
+                          cancelButtonTitle:@"dissmiss"
+                          otherButtonTitles: nil] show];
     };
     
-    request.failureBlock = failure;
-    [request fetchFrom:[self.dataSource url]];
-    
+    self.dataRequest.failureBlock = failure;
+    [self.dataRequest fetchFromURL:[self.dataSource url]];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self runButton:nil];
 }
 
 -(void)result:(id)result forBlockWithIdenfier:(NSString *)identifier
 {
-    if ([identifier isEqualToString:@"everyTenthLetter"]) {
-        [textView2 setText:[result componentsJoinedByString:@""]];
-    } else if ([identifier isEqualToString:@"tenthLetter"]) {
-        [textView1 setText:result];
-    } else if ([identifier isEqualToString:@"occurrence"]) {
-        [textView3 setText:result];
+    
+    NSArray *views = @[textView1, textView2, textView3];
+    NSInteger idx = [_blockIdentifier indexOfObject:identifier];
+    if (idx!= NSNotFound) {
+        [views[idx] setValue: ([result isKindOfClass:[NSArray class]])?[result componentsJoinedByString:@""] : result
+                      forKey:@"text"];
     }
-
 }
 
 

@@ -11,7 +11,7 @@
 @implementation DataRequest
 
 
-- (void)fetchFrom:(NSURL *)url
+- (void)fetchFromURL:(NSURL *)url
 {
     __block NSError *err;
     
